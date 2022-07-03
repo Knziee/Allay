@@ -11,8 +11,8 @@ Tornando um processo mais rapido e objetivo
 
 ## Situação atual
 
--WIP
--Código sera refatorado em futuro proximo
+- WIP
+- Código sera refatorado em futuro proximo
 
 ## :package: Como rodar a aplicação localmente:
   
