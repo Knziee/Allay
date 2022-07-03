@@ -40,8 +40,8 @@ Otimizado para resoluções a partir e acima de 1440 x 900
 
 ## Demonstração:
 
-![preview](https://i.imgur.com/XWjkqFJ.png)
-![preview](https://i.imgur.com/XWjkqFJ.png)
+![preview](https://i.imgur.com/5o6cilP.png)
+
 
 ## Equipe:
 
