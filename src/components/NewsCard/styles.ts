@@ -12,6 +12,15 @@ export const CardTitle = styled.div`
   text-align: center;
   color: #252525;
   margin-top: 16px;
+
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 24px;
+  max-height: 62px; /* fallback */
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
 `;
 export const CardFont = styled.div`
   font-family: "Inter500";

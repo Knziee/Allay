@@ -28,20 +28,20 @@ export const ReportCard: React.FC<ReportCardProps> = ({ tipo, data }) => {
       <ReportBar />
       <ButtonContainer>
         <Buttons
-          buttonBackgroundcolor="#4663BF
-        "
+          buttonBackgroundcolor="#4663BF"
           buttonHeight="31px"
           buttonText="Ver todos"
           buttonTextColor="#FFFFFF"
           buttonWidth="163px"
+          buttonBorderColor="#4663BF"
         />
         <Buttons
-          buttonBackgroundcolor="#FFFFFF
-        "
+          buttonBackgroundcolor="#FFFFFF"
           buttonHeight="31px"
           buttonText="Ver minha lista"
           buttonTextColor="#4663BF"
           buttonWidth="163px"
+          buttonBorderColor="#4663BF"
         />
       </ButtonContainer>
     </ReportCardBackground>

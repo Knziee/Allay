@@ -6,6 +6,7 @@ interface ButtonProps {
   buttonTextColor?: string;
   buttonHeight?: string;
   buttonWidth?: string;
+  buttonBorderColor?: string;
 }
 
 export const Buttons: React.FC<ButtonProps> = ({
@@ -14,6 +15,7 @@ export const Buttons: React.FC<ButtonProps> = ({
   buttonTextColor,
   buttonHeight,
   buttonWidth,
+  buttonBorderColor,
 }) => {
   return (
     <Button
@@ -22,6 +24,7 @@ export const Buttons: React.FC<ButtonProps> = ({
         color: buttonTextColor,
         height: buttonHeight,
         width: buttonWidth,
+        borderColor: buttonBorderColor,
       }}
     >
       {buttonText}

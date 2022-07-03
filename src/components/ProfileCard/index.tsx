@@ -13,6 +13,7 @@ import profileIcon from "../../assets/images/Vectorprofile.svg";
 import emailIcon from "../../assets/images/Vectoremail.svg";
 import configIcon from "../../assets/images/Vectorconfig.svg";
 import leaveIcon from "../../assets/images/Vectorleave.svg";
+import { Link } from "react-router-dom";
 
 interface ProfileProps {
   profilePic?: string;
@@ -59,20 +60,24 @@ export const ProfileCard: React.FC<ProfileProps> = ({
             height={17.8}
             style={{ marginTop: "31px" }}
           />
-          <img
-            src={leaveIcon}
-            alt="Sair"
-            width={14}
-            height={18}
-            style={{ marginTop: "35px" }}
-          />
+          <Link to="/">
+            <img
+              src={leaveIcon}
+              alt="Sair"
+              width={14}
+              height={18}
+              style={{ marginTop: "35px" }}
+            />
+          </Link>
         </ProfileIconColumn>
         <ProfileInfoColumn>
           <ProfileNameContainer>{name}</ProfileNameContainer>
           <ProfileRole>{role}</ProfileRole>
           <ProfileEmail>{email}</ProfileEmail>
           <ProfileOption>Configurações</ProfileOption>
-          <ProfileOption>Sair</ProfileOption>
+          <Link to="/">
+            <ProfileOption>Sair</ProfileOption>{" "}
+          </Link>
         </ProfileInfoColumn>
       </ProfileInfoContainer>
     </ProfileBackground>

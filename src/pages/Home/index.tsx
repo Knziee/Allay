@@ -17,7 +17,6 @@ import {
 import LogoLine from "../../assets/images/logoLine.svg";
 import SearchIcon from "../../assets/images/searchIcon.svg";
 import NotificationIcon from "../../assets/images/notificationIcon.svg";
-
 import { Logo } from "../../components/Logo";
 import { ProfileCard } from "../../components/ProfileCard";
 import { ReportCard } from "../../components/ReportCard";
@@ -25,9 +24,29 @@ import { BodyTheme } from "../../components/BodyThemesFilter";
 import { Buttons } from "../../components/Buttons";
 import { TaskList } from "../../components/TaskList";
 import { TrendingTopics } from "../../components/TrendingTopics";
-import { NewsCard } from "../../components/NewsCard";
+import NewsCard from "../../components/NewsCard";
+import { getHealthNews } from "../../services/newsApi/news";
+import { useState, useEffect } from "react";
+
+interface Article {
+  title: string;
+  source: any;
+  url: string;
+  urlToImage: string;
+}
 
 export const Home: React.FC = () => {
+  const [articles, setArticles] = useState<Article[]>([]);
+
+  useEffect(() => {
+    const getNoticias = async () => {
+      const response = await getHealthNews();
+      setArticles(response.articles);
+    };
+
+    getNoticias();
+  }, []);
+
   return (
     <MainContainer>
       <HeaderContent>
@@ -77,9 +96,7 @@ export const Home: React.FC = () => {
           </ThemeContainer>
           <SelectContainer>
             <FontSelect>
-              <option selected value="">
-                Fontes de Buscas Oficiais
-              </option>
+              <option defaultValue="">Fontes de Buscas Oficiais</option>
               <option value="">OMS </option>
               <option value="">ONU </option>
               <option value="">Ministério da Justiça</option>
@@ -88,18 +105,14 @@ export const Home: React.FC = () => {
               <option value="">Site do Congresso-Senado e Câmara </option>
             </FontSelect>
             <FontSelect>
-              <option selected value="">
-                Fontes de Midias Sociais
-              </option>
+              <option defaultValue="">Fontes de Midias Sociais</option>
               <option value="">Twitter</option>
               <option value="">Facebook</option>
               <option value="">Instagram</option>
               <option value="">LinkedIn </option>
             </FontSelect>
             <FontSelect>
-              <option selected value="">
-                Fontes de Mídias Informativas
-              </option>
+              <option defaultValue="">Fontes de Mídias Informativas</option>
               <option value="">Folha de São Paulo</option>
               <option value="">Estadão </option>
               <option value="">Valor Econômico </option>
@@ -127,9 +140,17 @@ export const Home: React.FC = () => {
           </TaskTopicsContainer>
           <LastNewsTitle>Últimas atualizações</LastNewsTitle>
           <LastNewsContainer>
-            <NewsCard />
-            <NewsCard />
-            <NewsCard />
+            {articles.map((article, index) => {
+              return (
+                <NewsCard
+                  title={article.title}
+                  url={article.url}
+                  imgUrl={article.urlToImage}
+                  font={article.source.name}
+                  key={index}
+                />
+              );
+            })}
           </LastNewsContainer>
         </BodyInfoContainer>
       </BodyContent>

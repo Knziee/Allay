@@ -2,37 +2,40 @@ import { CardContainer, CardTitle, CardFont } from "./styles";
 import { Buttons } from "../Buttons";
 
 import imageDemo from "../../assets/images/imageDemo.png";
+import { Link } from "react-router-dom";
 
 interface NewsCardProps {
   imgUrl?: string;
   title?: string;
   font?: string;
-  newUrl?: string;
+  url?: string;
 }
 
-export const NewsCard: React.FC<NewsCardProps> = ({
-  imgUrl,
-  title,
-  font,
-  newUrl,
-}) => {
+// export const NewsCard: React.FC<NewsCardProps> = ({
+//   imgUrl,
+//   title,
+//   font,
+//   url,
+// }) => {
+
+function NewsCard(props: NewsCardProps) {
   return (
     <CardContainer>
-      <img src={imageDemo} alt="" width={319} height={183} />
-      <CardTitle>
-        Após enchentes no Grande Recife, Izolda Cela e José Sarto oferecem ajuda
-        ao governo de Pernambuco
-      </CardTitle>
-      <CardFont>Fonte: g1.com.br</CardFont>
-      <div>
+      <img src={props.imgUrl} alt="" width={319} height={183} />
+      <CardTitle>{props.title}</CardTitle>
+      <CardFont>Fonte: {props.font}</CardFont>
+      <a href={props.url}>
         <Buttons
           buttonBackgroundcolor="#4663BF"
           buttonHeight="48px"
           buttonText="VER MAIS"
           buttonTextColor="#FFFFFF"
           buttonWidth="319px"
+          buttonBorderColor="#4663BF"
         />
-      </div>
+      </a>
     </CardContainer>
   );
-};
+}
+
+export default NewsCard;

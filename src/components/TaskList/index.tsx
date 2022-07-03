@@ -32,6 +32,7 @@ export const TaskList: React.FC = () => {
           buttonText="Lista de tarefas"
           buttonTextColor="#FFFFFF"
           buttonWidth="193px"
+          buttonBorderColor="#4663BF"
         />
       </TaskListImgButton>
     </TaskListBackground>

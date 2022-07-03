@@ -36,6 +36,7 @@ export const LoginPage: React.FC = () => {
               buttonBackgroundcolor="#4663BF"
               buttonText="ENTRAR"
               buttonTextColor="white"
+              buttonBorderColor="#4663BF"
             />
             <Buttons
               buttonBackgroundcolor="white"

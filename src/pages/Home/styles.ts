@@ -39,7 +39,7 @@ export const SearchInput = styled.input`
 export const BodyContent = styled.div`
   display: flex;
   flex-direction: row;
-  height: 1469px;
+  height: 100%;
   width: 1392px;
   background: #f6f5f8;
   border-radius: 10px;
@@ -57,7 +57,7 @@ export const BodyInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 1222px;
-  height: 646px;
+  height: 100%;
   margin-right: 52px;
   margin-top: 40px;
 `;
@@ -103,7 +103,8 @@ export const TaskTopicsContainer = styled.div`
 `;
 export const LastNewsContainer = styled.div`
   display: flex;
-  gap: 53px;
+  gap: 23px;
+  flex-wrap: wrap;
 `;
 export const LastNewsTitle = styled.div`
   display: flex;
